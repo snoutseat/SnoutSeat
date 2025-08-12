@@ -685,61 +685,59 @@
 
         /* Footer */
         footer {
-            padding: 24px 0;
+            padding: 48px 0;
             background: var(--surface);
             border-top: 1px solid var(--outline-variant);
-            text-align: center;
         }
 
         .footer-content {
             display: grid;
-            grid-template-columns: 120px 1fr 1fr 1fr;
-            gap: 32px;
+            grid-template-columns: 200px 1fr 1fr;
+            gap: 64px;
             align-items: start;
         }
 
         .footer-logo-col {
             display: flex;
             justify-content: center;
+            align-items: flex-start;
         }
 
-        .footer-description-col {
-            padding-right: 20px;
+        .footer-logo {
+            height: 160px;
+            width: auto;
+            opacity: 0.9;
+        }
+
+        .footer-info-col h4, .footer-links-col h4 {
+            font-size: 18px;
+            color: var(--on-surface);
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
         .footer-description {
             font-size: 14px;
             color: var(--on-surface-variant);
-            line-height: 1.5;
+            line-height: 1.6;
+            margin-bottom: 24px;
         }
 
-        .footer-logo {
-            height: 120px;
-            width: auto;
-            opacity: 0.8;
-        }
-
-        .footer-links-col, .footer-legal-col {
+        .footer-links-col {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .footer-links-col h4 {
-            font-size: 16px;
-            color: var(--on-surface);
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .footer-links-col a, .footer-legal-col a {
+        .footer-links-col a {
             color: var(--on-surface-variant);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
+            padding: 4px 0;
         }
 
-        .footer-links-col a:hover, .footer-legal-col a:hover {
+        .footer-links-col a:hover {
             color: var(--primary);
         }
 
@@ -797,19 +795,24 @@
 
             .footer-content {
                 grid-template-columns: 1fr;
-                gap: 32px;
+                gap: 40px;
                 text-align: center;
             }
 
             .footer-logo-col {
+                order: -1;
                 justify-content: center;
             }
 
-            .footer-description-col {
-                padding-right: 0;
+            .footer-logo {
+                height: 120px;
             }
 
-            .footer-links-col, .footer-legal-col {
+            .footer-info-col, .footer-links-col {
+                text-align: center;
+            }
+
+            .footer-links-col {
                 align-items: center;
             }
 
@@ -1034,19 +1037,18 @@
                 <div class="footer-logo-col">
                     <img src="assets/Logo.jpg" alt="SnoutSeat - Pet Travel Intelligence Platform Logo" class="footer-logo">
                 </div>
-                <div class="footer-description-col">
+                <div class="footer-info-col">
+                    <h4>About SnoutSeat</h4>
                     <p class="footer-description">Making pet travel simple with verified airline policies, fee comparisons, and pet-friendly route recommendations for dogs and cats.</p>
+                    <p class="copyright">© 2025 SnoutSeat. Making pet travel stress-free worldwide.</p>
                 </div>
                 <div class="footer-links-col">
                     <h4>Pet Travel Resources</h4>
                     <a href="#features">Airline Pet Policies</a>
                     <a href="#features">Pet Travel Fees</a>
                     <a href="#features">Pet-Friendly Routes</a>
-                </div>
-                <div class="footer-legal-col">
                     <a href="#privacy">Privacy Policy</a>
                     <a href="#terms">Terms of Service</a>
-                    <p class="copyright">© 2025 SnoutSeat. Making pet travel stress-free worldwide.</p>
                 </div>
             </div>
         </div>
