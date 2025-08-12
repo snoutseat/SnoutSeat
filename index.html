@@ -3,8 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SnoutSeat | End Pet Travel Uncertainty</title>
-    <meta name="description" content="Eliminate pet travel uncertainty with SnoutSeat's comprehensive airline policy database. Compare pet fees, restrictions, and routes across North American carriers. Join the waitlist for early access.">
+    
+    <!-- SEO Meta Tags -->
+    <title>Pet Travel Made Easy | SnoutSeat - Airline Policies, Fees & Pet-Friendly Routes</title>
+    <meta name="description" content="Book flights with pets confidently using SnoutSeat's comprehensive airline pet policy database. Compare pet travel fees, restrictions, and find pet-friendly airlines. Get verified information for traveling with dogs and cats.">
+    <meta name="keywords" content="pet travel, flying with pets, airline pet policies, pet-friendly airlines, dog travel, cat travel, pet fees airlines, pet travel restrictions, book flights with pets, pet travel guide, airline pet requirements">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Pet Travel Made Easy | SnoutSeat - Your Pet Travel Intelligence Platform">
+    <meta property="og:description" content="End pet travel uncertainty with SnoutSeat's verified airline policies, fees comparison, and pet-friendly route finder. Travel confidently with your pets.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://snoutseat.com">
+    <meta property="og:image" content="https://snoutseat.com/assets/Logo.jpg">
+    <meta property="og:site_name" content="SnoutSeat">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pet Travel Made Easy | SnoutSeat">
+    <meta name="twitter:description" content="Compare airline pet policies, fees, and find pet-friendly routes. End pet travel uncertainty today.">
+    <meta name="twitter:image" content="https://snoutseat.com/assets/Logo.jpg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="SnoutSeat">
+    <meta name="language" content="English">
+    <meta name="geo.region" content="US">
+    <meta name="geo.placename" content="United States">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://snoutseat.com">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "SnoutSeat",
+      "description": "Pet travel intelligence platform providing airline policies, fees comparison, and pet-friendly route analysis for traveling with pets",
+      "url": "https://snoutseat.com",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Web Browser",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1000"
+      }
+    }
+    </script>
+
+    <!-- Additional Schema Markup for Pet Travel Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "SnoutSeat Pet Travel Platform",
+      "description": "Compare airline pet policies, fees, and find pet-friendly flights for traveling with dogs and cats",
+      "provider": {
+        "@type": "Organization",
+        "name": "SnoutSeat"
+      },
+      "serviceType": "Pet Travel Planning",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Pet Travel Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Airline Pet Policy Database"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Pet Travel Fee Comparison"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XE6JNST30V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XE6JNST30V');
+      
+      // Track button clicks for analytics
+      function trackEvent(action, label) {
+        gtag('event', action, {
+          'event_category': 'engagement',
+          'event_label': label
+        });
+      }
+      
+      // Track waitlist signup
+      function trackWaitlistSignup() {
+        gtag('event', 'sign_up', {
+          'event_category': 'conversion',
+          'event_label': 'waitlist_signup'
+        });
+      }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -157,31 +272,6 @@
             background: rgba(26, 115, 232, 0.04);
         }
 
-        /* Modern Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--outline-variant);
-            z-index: 1000;
-            height: 64px;
-        }
-
-        .navbar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .logo {
-            height: 32px;
-            width: auto;
-        }
-
         /* Modern Hero Section */
         .hero {
             position: relative;
@@ -229,8 +319,19 @@
         .hero-tagline {
             font-size: 24px;
             color: var(--on-surface-variant);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--on-surface-variant);
             margin-bottom: 40px;
             font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
 
         .hero-actions {
@@ -599,11 +700,20 @@
 
         .footer-left {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .footer-description {
+            font-size: 14px;
+            color: var(--on-surface-variant);
+            line-height: 1.5;
+            max-width: 300px;
         }
 
         .footer-logo {
-            height: 240px;
+            height: 120px;
             width: auto;
             opacity: 0.8;
         }
@@ -617,8 +727,16 @@
 
         .footer-links {
             display: flex;
-            gap: 32px;
-            justify-content: flex-end;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-end;
+        }
+
+        .footer-links h4 {
+            font-size: 16px;
+            color: var(--on-surface);
+            margin-bottom: 8px;
+            font-weight: 500;
         }
 
         .footer-links a {
@@ -690,14 +808,16 @@
                 text-align: center;
             }
 
+            .footer-left {
+                align-items: center;
+            }
+
             .footer-right {
                 text-align: center;
             }
 
             .footer-links {
-                flex-direction: column;
-                gap: 16px;
-                justify-content: center;
+                align-items: center;
             }
 
             .hero-actions {
@@ -739,14 +859,6 @@
     </style>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header>
-        <nav class="container navbar">
-            <img src="assets/Logo.jpg" alt="SnoutSeat Logo" class="logo">
-            <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
-        </nav>
-    </header>
-
     <!-- Hero Section -->
     <section class="hero">
         <video autoplay muted loop playsinline class="hero-video">
@@ -756,11 +868,12 @@
             <div class="hero-content">
                 <div class="hero-grid">
                     <div class="hero-text">
-                        <h1 class="fade-in">End Pet Travel Uncertainty Before You Book ✈️</h1>
-                        <p class="hero-tagline fade-in">Where Pet Travel Meets Peace of Mind 🐾</p>
+                        <h1 class="fade-in">Pet Travel Made Easy - Compare Airline Pet Policies & Fees ✈️</h1>
+                        <p class="hero-tagline fade-in">Find Pet-Friendly Airlines, Compare Fees & Book with Confidence 🐾</p>
+                        <p class="hero-description fade-in">Get instant access to verified airline pet policies, fee comparisons, and pet-friendly route recommendations for dogs and cats</p>
                         <div class="hero-actions fade-in">
-                            <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
-                            <a href="#features" class="btn btn-secondary">Learn More</a>
+                            <a href="#waitlist" class="btn btn-primary" onclick="trackEvent('click', 'hero_join_early_access')">Join Early Access</a>
+                            <a href="#features" class="btn btn-secondary" onclick="trackEvent('click', 'hero_see_features')">See Features</a>
                         </div>
                     </div>
                 </div>
@@ -775,14 +888,14 @@
             <div class="problem-section">
                 <div class="problem-content">
                     <div class="problem-text">
-                        <h2>The Current Reality of Pet Travel 😟</h2>
-                        <p>Booking flights with pets feels like navigating a minefield of conflicting policies, hidden restrictions, and surprise fees. One day an airline accepts your breed, the next they don't. Partner airlines have different rules. Breed restrictions change without notice.</p>
-                        <p class="problem-highlight">The result? Sleepless nights wondering if you'll be turned away at the gate, leaving your vacation or relocation plans in ruins.</p>
+                        <h2>Why Pet Travel Planning Is So Difficult 😟</h2>
+                        <p>Flying with pets shouldn't be a guessing game. Yet pet parents face constant challenges: inconsistent airline pet policies, hidden pet travel fees, breed restrictions that change without notice, and conflicting information across booking platforms.</p>
+                        <p class="problem-highlight">The result? Pet owners spend hours researching airline pet requirements, only to discover restrictions or fees at the last minute that can ruin travel plans.</p>
                     </div>
                     <div class="problem-image">
-                        <img src="assets/sad.jpg" alt="Worried pet owner" />
+                        <img src="assets/sad.jpg" alt="Pet owner struggling with airline pet policies and travel restrictions" />
                         <div class="image-overlay">
-                            <span class="stress-indicator">😰 Stress & Uncertainty</span>
+                            <span class="stress-indicator">😰 Pet Travel Confusion</span>
                         </div>
                     </div>
                 </div>
@@ -800,26 +913,26 @@
             <div class="solution-section">
                 <div class="solution-content">
                     <div class="solution-image">
-                        <img src="assets/happy.jpg" alt="Happy pet owner" />
+                        <img src="assets/happy.jpg" alt="Happy pet owner successfully traveling with their pet using SnoutSeat" />
                         <div class="image-overlay">
-                            <span class="confidence-indicator">😊 Confidence & Peace of Mind</span>
+                            <span class="confidence-indicator">😊 Confident Pet Travel</span>
                         </div>
                     </div>
                     <div class="solution-text">
-                        <h2>SnoutSeat: Your Pet Travel Intelligence Platform 🚀</h2>
-                        <p>SnoutSeat transforms chaotic pet travel research into clear, actionable intelligence. Our comprehensive platform consolidates verified airline policies, fees, and restrictions into one trusted source.</p>
+                        <h2>SnoutSeat: Your Complete Pet Travel Solution 🚀</h2>
+                        <p>SnoutSeat eliminates pet travel guesswork with our comprehensive airline policy database. Compare pet fees across airlines, check breed restrictions, and find the most pet-friendly routes - all in one platform designed for confident pet travel.</p>
                         <div class="solution-benefits">
                             <div class="benefit">
                                 <span class="benefit-icon">✓</span>
-                                <span>Make informed booking decisions with confidence 💪</span>
+                                <span>Compare airline pet fees and policies instantly �</span>
                             </div>
                             <div class="benefit">
                                 <span class="benefit-icon">✓</span>
-                                <span>Avoid costly surprises at the airport 💰</span>
+                                <span>Avoid breed restrictions and travel surprises ✈️</span>
                             </div>
                             <div class="benefit">
                                 <span class="benefit-icon">✓</span>
-                                <span>Access verified, up-to-date information 📊</span>
+                                <span>Get verified, real-time airline pet information 📊</span>
                             </div>
                         </div>
                     </div>
@@ -836,24 +949,24 @@
         <div class="features-content">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">Intelligent Pet Travel Tools 🧠</h2>
-                    <p class="section-subtitle">Everything you need to travel confidently with your pet 🐕✈️</p>
+                    <h2 class="section-title">Complete Pet Travel Solution 🧠</h2>
+                    <p class="section-subtitle">Everything you need for stress-free pet travel planning 🐕✈️</p>
                 </div>
                 <div class="features-grid">
                     <div class="feature-card">
                         <div class="feature-number">1</div>
-                        <h3>The Intelligence Database</h3>
-                        <p>Access the most comprehensive collection of North American airline pet policies, manually verified and updated by our research team. From breed restrictions to carrier requirements, get accurate information you can trust when planning your pet's journey.</p>
+                        <h3>Airline Pet Policy Database</h3>
+                        <p>Access verified airline pet policies for all major carriers including American, Delta, United, Southwest and more. Get real-time information on pet travel restrictions, breed limitations, carrier size requirements, and in-cabin vs cargo policies for dogs and cats.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-number">2</div>
-                        <h3>Smart Route Analysis</h3>
-                        <p>Enter your departure city, destination, and pet details to see which airlines and routes welcome your furry companion. Our intelligent matching eliminates incompatible options upfront, saving hours of research and preventing booking mistakes.</p>
+                        <h3>Pet-Friendly Route Finder</h3>
+                        <p>Discover the most pet-friendly flight routes to your destination. Our intelligent search filters airlines by your pet's breed, size, and travel preferences, showing only compatible options that welcome your furry companion aboard.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-number">3</div>
-                        <h3>True Cost Calculator</h3>
-                        <p>Compare total travel costs including all pet-related fees across airlines. No surprises at checkout—see exactly what you'll pay for your ticket plus pet fees, helping you budget accurately and choose the best value option.</p>
+                        <h3>Pet Travel Fee Comparison</h3>
+                        <p>Compare airline pet fees instantly across all carriers. See total travel costs including pet fees, avoid hidden charges, and find the most affordable pet-friendly flights. Know exactly what you'll pay before booking.</p>
                     </div>
                 </div>
             </div>
@@ -891,31 +1004,31 @@
     <section id="waitlist" class="mission-waitlist">
         <div class="container">
             <div class="mission-content">
-                <h2>Our Mission 🎯</h2>
-                <p>Every pet parent deserves to travel with confidence, not anxiety. SnoutSeat exists to bring clarity to the confusing world of pet air travel by providing verified information, intelligent tools, and expert insights that help families make informed decisions. We believe knowledge eliminates fear, and preparation prevents problems—transforming pet travel from a stressful gamble into a planned, confident journey.</p>
+                <h2>Making Pet Travel Simple & Stress-Free 🎯</h2>
+                <p>Every pet parent deserves to fly with confidence, not anxiety. SnoutSeat transforms confusing airline pet policies into clear, actionable intelligence. We verify airline pet requirements, compare pet travel fees, and identify pet-friendly routes so families can book flights knowing their pets are welcome aboard.</p>
             </div>
             
             <div class="waitlist-grid">
                 <div class="waitlist-text">
-                    <h2>Get Early Access to Pet Travel Intelligence 🚀</h2>
-                    <p class="waitlist-subtitle">Join thousands of pet parents who want to end the guesswork and plan their next trip with confidence.</p>
+                    <h2>Join the Pet Travel Revolution 🚀</h2>
+                    <p class="waitlist-subtitle">Be among the first pet parents to access verified airline pet policies, fee comparisons, and pet-friendly flight recommendations.</p>
                     <div class="waitlist-benefits">
                         <div class="waitlist-benefit">
                             <span class="benefit-icon">🎯</span>
-                            <span>Be the first to access our platform</span>
+                            <span>First access to airline pet policy database</span>
                         </div>
                         <div class="waitlist-benefit">
                             <span class="benefit-icon">💰</span>
-                            <span>Get exclusive early-bird pricing</span>
+                            <span>Compare pet travel fees across all airlines</span>
                         </div>
                         <div class="waitlist-benefit">
                             <span class="benefit-icon">📊</span>
-                            <span>Access comprehensive airline database</span>
+                            <span>Get pet-friendly route recommendations</span>
                         </div>
                     </div>
                 </div>
                 <div class="form-container">
-                    <iframe width="540" height="305" src="https://6d1ee183.sibforms.com/serve/MUIFAPNyL-9y2CUetDVxPLOkpPy0Gz1XLvGUWzV8EEAJqaKdNdIIhXagFnxoQsl1pr9r3QGl7p1LmQu1EAw8UALrNivHm-fN_A1xMUWhGEIcRShiTTp_YlRmMRFx_GbZC9Fa-r3XiC1iC8igGcw8Cylrt9dkJbaLRUFdoCXeApAv0S8RrlFu5SGUB67aoESGhWoYyFN150M6VXjy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;"></iframe>
+                    <iframe width="540" height="305" src="https://6d1ee183.sibforms.com/serve/MUIFAPNyL-9y2CUetDVxPLOkpPy0Gz1XLvGUWzV8EEAJqaKdNdIIhXagFnxoQsl1pr9r3QGl7p1LmQu1EAw8UALrNivHm-fN_A1xMUWhGEIcRShiTTp_YlRmMRFx_GbZC9Fa-r3XiC1iC8igGcw8Cylrt9dkJbaLRUFdoCXeApAv0S8RrlFu5SGUB67aoESGhWoYyFN150M6VXjy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;" title="SnoutSeat Pet Travel Early Access Signup Form"></iframe>
                 </div>
             </div>
         </div>
@@ -926,14 +1039,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <img src="assets/Logo.jpg" alt="SnoutSeat Logo" class="footer-logo">
+                    <img src="assets/Logo.jpg" alt="SnoutSeat - Pet Travel Intelligence Platform Logo" class="footer-logo">
+                    <p class="footer-description">Making pet travel simple with verified airline policies, fee comparisons, and pet-friendly route recommendations for dogs and cats.</p>
                 </div>
                 <div class="footer-right">
                     <div class="footer-links">
+                        <h4>Pet Travel Resources</h4>
+                        <a href="#features">Airline Pet Policies</a>
+                        <a href="#features">Pet Travel Fees</a>
+                        <a href="#features">Pet-Friendly Routes</a>
                         <a href="#privacy">Privacy Policy</a>
                         <a href="#terms">Terms of Service</a>
                     </div>
-                    <p class="copyright">© 2025 SnoutSeat. All rights reserved.</p>
+                    <p class="copyright">© 2025 SnoutSeat. Making pet travel stress-free worldwide.</p>
                 </div>
             </div>
         </div>
