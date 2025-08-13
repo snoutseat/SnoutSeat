@@ -125,6 +125,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <style>
         /* CSS Reset & Base Styles */
@@ -230,7 +232,7 @@
 
         .animate-slide-left {
             opacity: 0;
-            transform: translateX(-80px);
+            transform: translateX(-100px);
             transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -241,7 +243,7 @@
 
         .animate-slide-right {
             opacity: 0;
-            transform: translateX(80px);
+            transform: translateX(100px);
             transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
@@ -361,46 +363,225 @@
             margin-top: 48px;
         }
 
-        /* Problem Solution Section - Apple-style */
-        .problem-solution {
+        /* Pet Challenges Section */
+        .pet-challenges {
             padding: 120px 0;
-            background: var(--surface);
+            background: linear-gradient(rgba(30, 30, 30, 0.85), rgba(30, 30, 30, 0.85)), url('assets/sad.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--surface);
+            position: relative;
+            overflow: hidden;
         }
 
-        .section-spacing {
-            margin-bottom: 120px;
-        }
-
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+        .challenges-content .section-header {
+            text-align: center;
             margin-bottom: 80px;
         }
 
-        .content-text h2 {
-            margin-bottom: 24px;
-            line-height: 1.08;
+        .challenges-content .section-title {
+            color: var(--surface);
+            margin-bottom: 16px;
         }
 
-        .content-text p {
+        .challenges-content .section-subtitle {
             font-size: 21px;
-            line-height: 1.38;
-            margin-bottom: 24px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .content-image {
+        .challenges-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .challenge-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .challenge-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .challenge-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 32px;
+            color: var(--accent);
+            background: rgba(255, 59, 48, 0.1);
+            border-radius: 12px;
+        }
+
+        .challenge-content {
+            flex: 1;
+        }
+
+        .challenge-card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+            color: var(--surface);
+            font-weight: 600;
+        }
+
+        .challenge-card p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--surface);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Solution Section */
+        .solution-section {
+            padding: 120px 0;
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('assets/happy.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
-            border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            color: var(--on-surface);
         }
 
-        .content-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
+        .solution-content .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .solution-content .section-title {
+            color: var(--on-surface);
+            margin-bottom: 16px;
+        }
+
+        .solution-content .section-subtitle {
+            font-size: 21px;
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--on-surface-variant);
+        }
+
+        .solution-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .solution-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .solution-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 32px;
+            color: var(--secondary);
+            background: rgba(52, 199, 89, 0.15);
+            border-radius: 12px;
+        }
+
+        .solution-content-text {
+            flex: 1;
+        }
+
+        .solution-card h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+            color: var(--on-surface);
+            font-weight: 600;
+        }
+
+        .solution-card p {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--on-surface-variant);
+        }
+
+        .solution-cta {
+            text-align: center;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--on-surface);
+        }
+
+        .solution-cta h3 {
+            margin-bottom: 16px;
+            font-size: 28px;
+            color: var(--on-surface);
+        }
+
+        .solution-cta p {
+            margin-bottom: 32px;
+            font-size: 18px;
+            color: var(--on-surface-variant);
         }
 
         /* Combined Features Section - Mission Background */
@@ -433,80 +614,58 @@
         }
 
         .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
             margin-bottom: 120px;
         }
 
         .feature-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 18px;
-            padding: 48px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: transparent;
+            padding: 18px 0;
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            min-height: unset;
         }
 
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-4px);
         }
 
-        .feature-number, .roadmap-number {
-            display: inline-flex;
+        .feature-icon {
+            width: 36px;
+            height: 36px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 20px;
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 24px;
+            flex-shrink: 0;
+            font-size: 32px;
+            color: var(--primary);
+            background: none;
+            border-radius: 0;
+            box-shadow: none;
+            margin-top: 2px;
         }
 
-        .feature-card h3, .roadmap-card h3 {
-            margin-bottom: 16px;
-            font-size: 24px;
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 4px;
+            font-size: 20px;
             color: var(--surface);
+            font-weight: 600;
         }
 
-        .feature-card p, .roadmap-card p {
-            font-size: 17px;
-            line-height: 1.47;
+        .feature-card p {
+            font-size: 15px;
+            line-height: 1.4;
             color: rgba(255, 255, 255, 0.9);
-        }
-
-        .roadmap-section {
-            margin: 120px 0;
-        }
-
-        .roadmap-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 48px;
-            margin-bottom: 120px;
-        }
-
-        .roadmap-card {
-            text-align: center;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 18px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .roadmap-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            border-color: rgba(255, 255, 255, 0.4);
         }
 
         .waitlist-section {
@@ -540,14 +699,54 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
+        /* Waitlist Section */
+        .waitlist-section {
+            padding: 120px 0;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('assets/mission.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--surface);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .waitlist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .waitlist-text h2 {
+            margin-bottom: 24px;
+            color: var(--surface);
+            font-size: clamp(32px, 4.5vw, 56px);
+            font-weight: 600;
+            line-height: 1.07143;
+        }
+
+        .waitlist-text p {
+            font-size: 21px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 32px;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(30px);
+            padding: 40px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
         .form-container iframe {
             border-radius: 12px;
             width: 100%;
             max-width: 100%;
             min-height: 420px;
-        }
-
-        /* Footer */
+        }        /* Footer */
         footer {
             padding: 80px 0 40px 0;
             background: var(--surface);
@@ -618,18 +817,61 @@
                 padding: 0 20px;
             }
 
-            .content-grid,
             .waitlist-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
             }
 
-            .features-grid {
-                grid-template-columns: 1fr;
+            .feature-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 30px;
             }
 
-            .roadmap-grid {
+            .feature-card .feature-content {
+                order: 2;
+            }
+
+            .feature-card .feature-icon {
+                order: 1;
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+            }
+
+            .challenge-card,
+            .solution-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+                padding: 24px;
+            }
+
+            .challenge-icon,
+            .solution-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+                margin: 0 auto;
+            }
+
+            .impact-stats {
                 grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 40px 0;
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .solution-cta {
+                padding: 40px 20px;
+            }
+
+            .solution-cta h3 {
+                font-size: 24px;
             }
 
             .footer-content {
@@ -686,98 +928,129 @@
         </div>
     </section>
 
-    <!-- Problem Solution Section -->
-    <section class="problem-solution">
+    <!-- Pet Travel Challenges Section -->
+    <section class="pet-challenges">
         <div class="container">
-            <!-- Problem Section -->
-            <div class="section-spacing">
-                <div class="content-grid">
-                    <div class="content-text animate-slide-left">
-                        <h2>Pet Travel Challenges</h2>
-                        <p>Inconsistent airline policies, hidden fees, and breed restrictions create uncertainty for pet owners planning travel.</p>
+            <div class="challenges-content">
+                <div class="section-header animate-on-scroll">
+                    <h2 class="section-title">The Pet Travel Reality</h2>
+                    <p class="section-subtitle">Understanding the challenges that make traveling with pets stressful and uncertain</p>
+                </div>
+                
+                <div class="challenges-grid">
+                    <div class="challenge-card animate-slide-left stagger-1">
+                        <span class="challenge-icon material-icons">error_outline</span>
+                        <div class="challenge-content">
+                            <h3>Denied Boarding Fears</h3>
+                            <p>48% of pet owners experience separation anxiety, yet face the terrifying possibility of being turned away at check-in due to subjective agent decisions.</p>
+                        </div>
                     </div>
-                    <div class="content-image animate-slide-right">
-                        <img src="assets/sad.jpg" alt="Pet travel challenges and confusion" />
+                    
+                    <div class="challenge-card animate-slide-right stagger-2">
+                        <div class="challenge-content">
+                            <h3>Hidden Policy Conflicts</h3>
+                            <p>Booking on one airline only to discover it's operated by a partner with completely different, trip-invalidating pet restrictions.</p>
+                        </div>
+                        <span class="challenge-icon material-icons">visibility_off</span>
+                    </div>
+                    
+                    <div class="challenge-card animate-slide-left stagger-3">
+                        <span class="challenge-icon material-icons">phone</span>
+                        <div class="challenge-content">
+                            <h3>Manual Booking Nightmare</h3>
+                            <p>Average 71-minute wait times for phone bookings with a 44% failure rate, turning simple reservations into hours of frustration.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-card animate-slide-right stagger-4">
+                        <div class="challenge-content">
+                            <h3>Unpredictable Costs</h3>
+                            <p>Pet fees ranging from $50 to $200 per flight with no easy way to compare, creating budget uncertainty for the 40% who travel with pets.</p>
+                        </div>
+                        <span class="challenge-icon material-icons">trending_up</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Solution Section -->
-            <div class="section-spacing">
-                <div class="content-grid">
-                    <div class="content-image animate-slide-left">
-                        <img src="assets/happy.jpg" alt="Confident pet travel with SnoutSeat" />
+                
+                <div class="impact-stats animate-on-scroll">
+                    <div class="stat-item">
+                        <span class="stat-number">61%</span>
+                        <span class="stat-label">worry more about their pet than their own enjoyment</span>
                     </div>
-                    <div class="content-text animate-slide-right">
-                        <h2>Simple Solutions</h2>
-                        <p>SnoutSeat provides comprehensive airline policy data, fee comparisons, and pet-friendly route recommendations in one platform.</p>
+                    <div class="stat-item">
+                        <span class="stat-number">52%</span>
+                        <span class="stat-label">feel too guilty to leave due to their pet's reaction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">94M</span>
+                        <span class="stat-label">U.S. households own pets as of 2025</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Combined Features, Roadmap, and Waitlist Section -->
-    <section id="features" class="combined-features">
+    <!-- Solution Section -->
+    <section class="solution-section">
         <div class="container">
-            <!-- Features Section -->
-            <div class="section-header animate-on-scroll">
-                <h2 class="section-title">Complete Pet Travel Solution</h2>
-                <p class="section-subtitle">Everything you need for confident pet travel planning</p>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card animate-on-scroll stagger-1">
-                    <div class="feature-number">1</div>
-                    <h3>Airline Policy Database</h3>
-                    <p>Access verified pet policies for major carriers including breed restrictions, carrier requirements, and travel guidelines.</p>
-                </div>
-                <div class="feature-card animate-on-scroll stagger-2">
-                    <div class="feature-number">2</div>
-                    <h3>Pet-Friendly Routes</h3>
-                    <p>Discover optimal flight routes based on your pet's breed, size, and travel preferences across all airlines.</p>
-                </div>
-                <div class="feature-card animate-on-scroll stagger-3">
-                    <div class="feature-number">3</div>
-                    <h3>Fee Comparison</h3>
-                    <p>Compare pet travel costs across carriers to find the most affordable options for your journey.</p>
-                </div>
-            </div>
-
-            <!-- Roadmap Section -->
-            <div class="roadmap-section">
+            <div class="solution-content">
                 <div class="section-header animate-on-scroll">
-                    <h2 class="section-title">Our Roadmap</h2>
-                    <p class="section-subtitle">Building the future of pet travel, one step at a time</p>
+                    <h2 class="section-title">Your Pet Travel Intelligence Platform</h2>
+                    <p class="section-subtitle">Transforming uncertainty into confidence with comprehensive data and smart recommendations</p>
                 </div>
-                <div class="roadmap-grid">
-                    <div class="roadmap-card animate-on-scroll stagger-1">
-                        <div class="roadmap-number">1</div>
-                        <h3>Planning Platform</h3>
-                        <p>Comprehensive comparison tool for researching pet travel options with complete transparency.</p>
+                
+                <div class="solution-grid">
+                    <div class="solution-card animate-slide-left stagger-1">
+                        <span class="solution-icon material-icons">verified</span>
+                        <div class="solution-content-text">
+                            <h3>Boarding Guarantee</h3>
+                            <p>Eliminate denial fears with our verified rules engine that ensures policy compliance before you book, backed by comprehensive airline data.</p>
+                        </div>
                     </div>
-                    <div class="roadmap-card animate-on-scroll stagger-2">
-                        <div class="roadmap-number">2</div>
-                        <h3>Booking Integration</h3>
-                        <p>Streamlined booking with pre-validated pet compatibility and dedicated support.</p>
+                    
+                    <div class="solution-card animate-slide-right stagger-2">
+                        <div class="solution-content-text">
+                            <h3>Transparent Policy Database</h3>
+                            <p>Access real-time, manually curated policies for all major carriers including partner airline rules, breed restrictions, and carrier requirements.</p>
+                        </div>
+                        <span class="solution-icon material-icons">database</span>
                     </div>
-                    <div class="roadmap-card animate-on-scroll stagger-3">
-                        <div class="roadmap-number">3</div>
-                        <h3>Premium Services</h3>
-                        <p>VIP support and exclusive partnerships for end-to-end travel experiences.</p>
+                    
+                    <div class="solution-card animate-slide-left stagger-3">
+                        <span class="solution-icon material-icons">schedule</span>
+                        <div class="solution-content-text">
+                            <h3>Instant Online Booking</h3>
+                            <p>Skip the 71-minute phone calls. Compare options, verify eligibility, and book your pet's travel online in minutes, not hours.</p>
+                        </div>
                     </div>
+                    
+                    <div class="solution-card animate-slide-right stagger-4">
+                        <div class="solution-content-text">
+                            <h3>Smart Cost Optimization</h3>
+                            <p>Compare fees across all airlines for your specific route and pet, finding the most cost-effective options without compromising safety or comfort.</p>
+                        </div>
+                        <span class="solution-icon material-icons">savings</span>
+                    </div>
+                </div>
+                
+                <div class="solution-cta animate-on-scroll">
+                    <h3>Turn Pet Travel Anxiety Into Confidence</h3>
+                    <p>Join thousands of pet owners who've made the switch to stress-free travel planning</p>
+                    <a href="#waitlist" class="btn btn-primary" onclick="trackEvent('click', 'solution_join_early_access')">Start Planning Today</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Waitlist Section -->
-            <div id="waitlist" class="waitlist-section">
-                <div class="waitlist-grid">
-                    <div class="waitlist-text animate-slide-left">
-                        <h2>Join Early Access</h2>
-                        <p>Be among the first to access verified airline policies, fee comparisons, and pet-friendly recommendations.</p>
-                    </div>
-                    <div class="form-container animate-slide-right">
-                        <iframe width="540" height="305" src="https://6d1ee183.sibforms.com/serve/MUIFAPNyL-9y2CUetDVxPLOkpPy0Gz1XLvGUWzV8EEAJqaKdNdIIhXagFnxoQsl1pr9r3QGl7p1LmQu1EAw8UALrNivHm-fN_A1xMUWhGEIcRShiTTp_YlRmMRFx_GbZC9Fa-r3XiC1iC8igGcw8Cylrt9dkJbaLRUFdoCXeApAv0S8RrlFu5SGUB67aoESGhWoYyFN150M6VXjy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;" title="SnoutSeat Pet Travel Early Access Signup Form"></iframe>
-                    </div>
+    <!-- Waitlist Section -->
+    <section id="waitlist" class="waitlist-section">
+        <div class="container">
+            <div class="waitlist-grid">
+                <div class="waitlist-text animate-slide-left">
+                    <h2>Join Early Access</h2>
+                    <p>Be among the first to access verified airline policies, fee comparisons, and pet-friendly recommendations.</p>
+                </div>
+                <div class="form-container animate-slide-right">
+                    <iframe width="540" height="305" src="https://6d1ee183.sibforms.com/serve/MUIFAPNyL-9y2CUetDVxPLOkpPy0Gz1XLvGUWzV8EEAJqaKdNdIIhXagFnxoQsl1pr9r3QGl7p1LmQu1EAw8UALrNivHm-fN_A1xMUWhGEIcRShiTTp_YlRmMRFx_GbZC9Fa-r3XiC1iC8igGcw8Cylrt9dkJbaLRUFdoCXeApAv0S8RrlFu5SGUB67aoESGhWoYyFN150M6VXjy" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%;" title="SnoutSeat Pet Travel Early Access Signup Form"></iframe>
                 </div>
             </div>
         </div>
@@ -858,8 +1131,8 @@
             });
         });
 
-        // Feature card enhanced hover effects
-        document.querySelectorAll('.feature-card').forEach(card => {
+        // Enhanced hover effects for cards
+        document.querySelectorAll('.challenge-card, .solution-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-12px) scale(1.02)';
             });
